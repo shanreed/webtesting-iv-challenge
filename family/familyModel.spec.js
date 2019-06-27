@@ -25,4 +25,20 @@ describe('Family model', () => {
         });
         
     });
+
+    describe('remove', () => {
+        beforeEach(async () => {
+            await db('members').truncate();
+          });
+    
+        it('should remove shannon from db by id', async () => {
+            await Members.add({name: 'shannon'})
+            await Members.remove(1)
+            const members = await db('members')
+            expect(members).toHaveLength(0)
+           
+    
+            
+        })
+      })
 })

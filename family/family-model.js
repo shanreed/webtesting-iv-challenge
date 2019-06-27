@@ -17,5 +17,7 @@ module.exports = {
   }
   
   function remove(id) {
-    
+    return db('members')
+    .where({ id })
+    .del()
   }

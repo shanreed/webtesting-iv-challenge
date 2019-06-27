@@ -28,7 +28,7 @@ describe('server.js', () => {
      });
 
 
-     it('should return { api: "up" }', () => {
+     it('should return API RUNNING', () => {
         return request(server)
         .get('/')
         .then(res => {
