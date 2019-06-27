@@ -1,6 +1,6 @@
 const express = require('express');
 
-const Members = require('../family/family-model.js');
+const Family = require('../family/family-model.js');
 
 const server = express();
 
@@ -11,9 +11,9 @@ server.get('/', (req, res) => {
 });
 
 server.get('/family', (req, res) => {
-  Members.getAll()
+  Family.getAll()
     .then(members => {
-      res.status(200).json(rows);
+      res.status(200).json(members);
     })
     .catch(error => {
       res.status(500).json(error);
